@@ -13,7 +13,6 @@ using namespace std;
 
 
 ////\\\\ STRUCTURES ////\\\\
-
 // Structure for holding xy coordinates
 struct point {
 	int x, y;
@@ -25,15 +24,17 @@ struct equation {
 	int b;
 };
 
+
 ////////\\\\\\\\ FUNCTION DECLARATIONS ////////\\\\\\\\
+
 
 ////\\\\ USER INPUT ////\\\\
 
 /*
-	Prompts the user to input 
-	the slope(m) and y-intercept(b) of an equation
+	Prompts the user to input
+	the slope(m) and y - intercept(b) of an equation
 	@param NULL
-	@return A completed equation object: "e"
+	@return A completed equation object : "e"
 */
 equation getEquation();
 
@@ -41,15 +42,15 @@ equation getEquation();
 ////\\\\ LINE LOGIC ////\\\\
 
 /*
-	Generates a set of points 
+	Generates a set of points
 	based off passed equation
-	@param An equation: "e";
-	@return A vector full of point objects: "points"
+	@param An equation : "e";
+	@return A vector full of point objects : "points"
 */
 vector<point> fillPoints(equation e);
 
 /*
-	Generates a grid and then draws points 
+	Generates a grid and then draws points
 	using the passed vector or points
 	@param A vector of point objects "points"
 	@return 2D vector of strings represting the graph
@@ -83,7 +84,6 @@ void printGrid(vector<vector<string>> grid);
 
 
 ////\\\\ MAIN FUNCTION ////\\\\
-
 // Contains the main operations for the program
 int main()
 {
@@ -106,7 +106,6 @@ int main()
 
 
 ////\\\\ FUNCTION INITIALIZATIONS ////\\\\
-
 // Prompts the user to input the slope(m) and y - intercept(b) of an equation
 equation getEquation() {
 	equation e;
@@ -124,7 +123,7 @@ vector<point> fillPoints(equation e) {
 	for (int i = 1; i < 11; i++) {
 		point p;
 		p.x = i;
-		p.y =  (i * e.m) + e.b;
+		p.y = (i * e.m) + e.b;
 		points.push_back(p);
 	}
 	return points;
